@@ -1,0 +1,14 @@
+<div>
+  <h1><%= @item.name %></h1>
+  <p><%= @item.description%></p>
+  <%= link_to "Edit", edit_item_path(@item) %>
+  <%= link_to "Destroy", item_path(@item), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %>
+</div>
+<br>
+
+<%= render "item_warehouses/show", warehouses: @warehouses, item: @item %>
+
+<p><%= link_to "Return to Homepage", root_path %></p>

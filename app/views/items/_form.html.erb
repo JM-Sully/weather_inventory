@@ -1,0 +1,5 @@
+<%= simple_form_for item do |f| %>
+  <%= f.input :name, error: "Please enter the name of the item" %>
+  <%= f.input :description, error: "Please enter a description for the item" %>
+  <%= f.button :submit %>
+<% end %>

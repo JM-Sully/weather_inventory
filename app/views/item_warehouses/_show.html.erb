@@ -1,0 +1,30 @@
+<div>
+  <% if warehouses.any? %>
+    <table>
+      <tr>
+        <th>Warehouse Name</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Inventory in stock</th>
+        <th></th>
+      </tr>
+      <% warehouses.each do |w| %>
+        <tr>
+          <td><%= w.warehouse.name %></td>
+          <td><%= w.warehouse.city %></td>
+          <td><%= w.warehouse.country %></td>
+          <td><%= w.amount %></td>
+          <td><%= link_to "Edit Warehouse Inventory", edit_item_warehouse_path(w) %></td>
+        </tr>
+      <% end %>
+    </table>    
+  <% else %>
+    There is no inventory of this item at any of our warehouses.
+  <% end %>
+  <br>
+  <% if @empty_warehouses.empty? %>
+    <p>All warehouses have stock in them. Click <%= link_to "here", new_warehouse_path %> to add a new warehouse.</p>
+  <% else %>
+    <p>Click <%= link_to "here", new_item_warehouse_path(item: @item) %> to add items to a different warehouse.</p>
+  <% end %>
+</div>

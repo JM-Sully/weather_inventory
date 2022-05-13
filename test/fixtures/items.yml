@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+dog:
+  name: Dog
+  description: Excellent for companionship and general enjoyment of life
+
+jacket:
+  name: Rain Jacket
+  description: Great for staying dry
+
+pot:
+  name: Pot
+  description: Best used for oats in the morning

@@ -1,0 +1,9 @@
+<div>  
+  <h1>Add the amount of <%=@item.name%> to a new Warehouse</h1>
+  <%= simple_form_for @item_warehouse do |f| %>
+    <%= f.input :amount, error: "Please enter the amount of the item" %>
+    <%= f.hidden_field :item_id, value: @item.id %>
+    <%= f.input :warehouse_id, collection: @empty_warehouses, error: "Please select a warehouse" %>
+    <%= f.button :submit, 'Update Inventory' %>
+  <% end %>
+</div>

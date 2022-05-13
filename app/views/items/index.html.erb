@@ -1,0 +1,25 @@
+<div>
+  <h1>Van stuff</h1>
+  <p>Welcome to the logistics site for managing inventory required for a wonderful campervan experience. 
+      All inventory is listed below and warehouse information can be found <%= link_to "here", warehouses_path %>.</p>
+</div>
+
+<div>
+  <h2>Inventory</h2>
+  <p>Click <%= link_to "here", new_item_path %> to add a new item to the inventory.</p>
+
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= link_to item.name, item %></td>
+        <td><%= item.description %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+
