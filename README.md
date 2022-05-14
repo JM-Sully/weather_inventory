@@ -6,7 +6,7 @@ Github repo located at: https://github.com/JM-Sully/Inventory
 
 1.  Install Bundler
 
-        gem install bundler
+        gem install bundler -v '~> 2.3'
 
 2.  Install gems
 
