@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Github repo located at: https://github.com/JM-Sully/Inventory
 
-Things you may want to cover:
+## Setup on Replit
 
-* Ruby version
+1.  Install Bundler
 
-* System dependencies
+        gem install bundler
 
-* Configuration
+2.  Install gems
 
-* Database creation
+        bundle install
 
-* Database initialization
+3. Configure your datastore
 
-* How to run the test suite
+        rake db:setup
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+4. Click 'Run' button 
