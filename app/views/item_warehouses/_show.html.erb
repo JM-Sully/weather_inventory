@@ -1,5 +1,5 @@
 <div>
-  <% if warehouses.any? %>
+  <% if item_warehouses.any? %>
     <table>
       <tr>
         <th>Warehouse Name</th>
@@ -8,7 +8,7 @@
         <th>Inventory in stock</th>
         <th></th>
       </tr>
-      <% warehouses.each do |w| %>
+      <% item_warehouses.each do |w| %>
         <tr>
           <td><%= w.warehouse.name %></td>
           <td><%= w.warehouse.city %></td>
@@ -19,12 +19,15 @@
       <% end %>
     </table>    
   <% else %>
-    There is no inventory of this item at any of our warehouses.
+    <p>There is no inventory of this item at any of our warehouses.</p>
+    <p>Click <%= link_to "here", new_item_warehouse_path(item: @item) %> to add items to a warehouse.</p>
   <% end %>
   <br>
   <% if @empty_warehouses.empty? %>
     <p>All warehouses have stock in them. Click <%= link_to "here", new_warehouse_path %> to add a new warehouse.</p>
   <% else %>
-    <p>Click <%= link_to "here", new_item_warehouse_path(item: @item) %> to add items to a different warehouse.</p>
+    <% unless item_warehouses.empty? %>
+      <p>Click <%= link_to "here", new_item_warehouse_path(item: @item) %> to add items to a different warehouse.</p>
+    <% end %>
   <% end %>
 </div>

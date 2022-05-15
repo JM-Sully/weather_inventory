@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @warehouses = @item.item_warehouses.where(item: @item)
+    @item_warehouses = @item.item_warehouses.where(item: @item)
 
     item_warehouses_with_inventory = ItemWarehouse.where(item: @item)
     @empty_warehouses = Warehouse.where.not(id: item_warehouses_with_inventory.map(&:warehouse_id)) 
