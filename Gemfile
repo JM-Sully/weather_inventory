@@ -34,6 +34,12 @@ gem "redis", "~> 4.0"
 gem 'simple_form'
 gem 'country_select'
 
+# Use faraday to make HTTP requests to API
+gem 'faraday'
+
+# Use to load env variables
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
