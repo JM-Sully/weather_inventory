@@ -1,6 +1,6 @@
-<h1>Edit the amount of <%= @item_warehouses.item.name.pluralize(@item_warehouses.amount) %> in <%= @item_warehouses.warehouse.name %>'s Warehouse</h1>
+<h1>Edit the amount of <%= @item_warehouse.item.name.pluralize(@item_warehouse.amount) %> in <%= @item_warehouse.warehouse.name %>'s Warehouse</h1>
 <div>  
-  <%= simple_form_for @item_warehouses do |f| %>
+  <%= simple_form_for @item_warehouse do |f| %>
     <%= f.input :amount, error: "Please enter the amount of the item" %>
     <%= f.button :submit, 'Update Inventory' %>
   <% end %>

@@ -18,7 +18,7 @@ class ItemWarehousesController < ApplicationController
   end
 
   def edit
-    @item_warehouses = ItemWarehouse.find(params[:id])
+    @item_warehouse = ItemWarehouse.find(params[:id])
   end
 
   def update
