@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   resources :items
   resources :warehouses
-  resources :item_warehouses
+  resources :item_warehouses, only: [:new, :create, :edit, :update]
 end
