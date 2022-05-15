@@ -35,14 +35,6 @@ class WarehousesController < ApplicationController
     end
   end
 
-  def destroy
-    @warehouse = Warehouse.find(params[:id])
-    @warehouse.destroy
-
-    redirect_to warehouses_path, status: :see_other
-  end
-
-
   private
     def warehouse_params
       params.require(:warehouse).permit(:name, :city, :country)
