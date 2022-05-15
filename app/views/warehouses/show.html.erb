@@ -2,11 +2,6 @@
   <h1><%= @warehouse.name %></h1>
   <p><%= @warehouse.city %>, <%= @warehouse.country %></p>
   <%= link_to "Edit", edit_warehouse_path(@warehouse) %>
-  <%= link_to "Destroy", warehouse_path(@warehouse), data: {
-                      turbo_method: :delete,
-                      # confirmation is commented out as it doesn't work on replit
-                      # turbo_confirm: "Are you sure?"
-                    } %>
 </div>                    
 
 <p><%= link_to "View all Warehouses", warehouses_path %></p>

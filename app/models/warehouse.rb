@@ -1,5 +1,5 @@
 class Warehouse < ApplicationRecord
-  has_many :item_warehouses, dependent: :destroy
+  has_many :item_warehouses
   
   validates :name, presence: true
   validates :city, presence: true
