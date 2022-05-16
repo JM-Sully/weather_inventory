@@ -14,6 +14,7 @@ class WarehousesController < ApplicationController
 
   def create
     @warehouse = Warehouse.new(warehouse_params)
+    set_country(@warehouse.city)
 
     if @warehouse.save
       redirect_to @warehouse
@@ -37,6 +38,21 @@ class WarehousesController < ApplicationController
   end
 
   private
+    def set_country(city)
+      case city
+      when "Ottawa"
+        @warehouse.country = "Canada"
+      when "Zarautz"
+        @warehouse.country = "Spain"
+      when "Mimizan"
+        @warehouse.country = "France"
+      when "Monmouth"
+        @warehouse.country = "Wales"
+      when "Birmingham"
+        @warehouse.country = "England"
+      end
+    end
+
     def warehouse_params
       params.require(:warehouse).permit(:name, :city, :country)
     end

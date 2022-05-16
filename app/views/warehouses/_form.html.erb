@@ -1,6 +1,5 @@
 <%= simple_form_for warehouse do |f| %>
   <%= f.input :name, error: "Please enter the name of the warehouse" %>
   <%= f.input :city, collection: @cities, error: "Please enter the city of the warehouse" %>
-  <%= f.input :country, error: "Please enter the country of the warehouse" %>
   <%= f.button :submit %>
 <% end %>

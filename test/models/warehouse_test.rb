@@ -17,14 +17,6 @@ class WarehouseTest < ActiveSupport::TestCase
     assert_not warehouse.save
   end
 
-  test "should not save without a country" do
-    warehouse = Warehouse.new(
-      name: "Capital City Warehouse",
-      city: "Ottawa",
-    )
-    assert_not warehouse.save
-  end
-
   test "should save with all fields complete" do
     warehouse = Warehouse.new(
       name: "Capital City Warehouse",
