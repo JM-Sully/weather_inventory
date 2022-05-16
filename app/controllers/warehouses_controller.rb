@@ -9,6 +9,7 @@ class WarehousesController < ApplicationController
 
   def new
     @warehouse = Warehouse.new
+    @cities = Warehouse.cities
   end
 
   def create
