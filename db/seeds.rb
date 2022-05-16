@@ -15,8 +15,8 @@ items = Item.create([
 
 warehouses = Warehouse.create([
   { name: "Kitchen Supplies", city: "Ottawa", country: "Canada" },
-  { name: "Outside Kit", city: "London", country: "United Kingdom" },
-  { name: "Living Essentials", city: "Montreal", country: "Canada" }
+  { name: "Outside Kit", city: "Zarautz", country: "Spain" },
+  { name: "Living Essentials", city: "Mimizan", country: "France" }
 ])
 
 item_warehouses = ItemWarehouse.create([
