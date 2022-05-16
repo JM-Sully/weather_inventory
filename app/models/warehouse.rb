@@ -10,8 +10,8 @@ class Warehouse < ApplicationRecord
       "Ottawa", 
       "Zarautz",
       "Mimizan",
-      "Monmouth"
-      "Birmingham",
+      "Monmouth",
+      "Birmingham"
     ]
   end
 end
