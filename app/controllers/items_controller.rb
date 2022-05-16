@@ -19,7 +19,8 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
 
     if @item.save
-      redirect_to @item
+      id = @item.id.to_s
+      redirect_to "/item_warehouses/new?item=" + id
     else
       render :new, status: :unprocessable_entity
     end
