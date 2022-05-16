@@ -3,7 +3,7 @@
   <%= simple_form_for @item_warehouse do |f| %>
     <%= f.input :amount, error: "Please enter the amount of the item" %>
     <%= f.hidden_field :item_id, value: @item.id %>
-    <%= f.input :warehouse_id, collection: @empty_warehouses, error: "Please select a warehouse" %>
+    <%= f.input :warehouse_id, collection: @empty_warehouses, label: "Warehouse Location", label_method: :city, include_blank: false, error: "Please select a warehouse" %>
     <%= f.button :submit, 'Update Inventory' %>
   <% end %>
 </div>
