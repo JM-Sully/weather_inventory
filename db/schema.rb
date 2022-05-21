@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_05_10_115709) do
   create_table "item_warehouses", force: :cascade do |t|
-    t.integer "amount", default: 0
+    t.integer "amount", default: 0, null: false
     t.integer "item_id", null: false
     t.integer "warehouse_id", null: false
     t.datetime "created_at", null: false
