@@ -6,28 +6,28 @@ class ItemWarehouse < ApplicationRecord
   validates :item_id, presence: true 
   validates :warehouse_id, presence: true
 
-  def weather_description(city)
-    data = weather_response(city)
+  def weather_description
+    data = weather_response
     data["weather"].first["description"]
   end
 
-  def current_temp(city)
-    data = weather_response(city)
+  def current_temp
+    data = weather_response
     data["main"]["temp"]
   end 
 
-  def min_temp(city)
-    data = weather_response(city)
+  def min_temp
+    data = weather_response
     data["main"]["temp_min"]
   end
 
-  def max_temp(city)
-    data = weather_response(city)
+  def max_temp
+    data = weather_response
     data["main"]["temp_max"]
   end 
 
-  def weather_response(city)
-    res = Openweather::Search.by_location(city)
+  def weather_response
+    res = Openweather::Search.by_location(warehouse.city)
     data = JSON.parse res.body
   end
 end

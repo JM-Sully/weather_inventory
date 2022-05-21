@@ -37,8 +37,12 @@
         <td>
           <% item.item_warehouses.each do |iw| %>
             <ul>
-              <li>Today the weather will be <%= iw.weather_description(iw.warehouse.city) %> with a low of <%= iw.min_temp(iw.warehouse.city) %> and a high of <%= iw.max_temp(iw.warehouse.city) %>. The current temperature is <%= iw.current_temp(iw.warehouse.city) %>.
-              </li>
+              <% if iw.weather_response["cod"] == 401 %>
+                <li>Sorry, but we're unable to display the weather at the moment</li>
+              <% else %>
+                <li>Today the weather will be <%= iw.weather_description %> with a low of <%= iw.min_temp %>℃ and a high of <%= iw.max_temp %>℃. The current temperature is <%= iw.current_temp %>℃.
+                </li>
+              <% end %>  
             </ul>
           <% end %>
         </td>
