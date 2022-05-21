@@ -3,9 +3,8 @@ class Warehouse < ApplicationRecord
   
   validates :name, presence: true
   validates :city, presence: true
-  # validates :country, presence: true
 
-  def self.cities 
+  CITIES = 
     [
       "Ottawa", 
       "Zarautz",
@@ -13,5 +12,4 @@ class Warehouse < ApplicationRecord
       "Monmouth",
       "Birmingham"
     ]
-  end
 end
